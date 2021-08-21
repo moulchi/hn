@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+      <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+            <div id="player-wrapper" class="player"></div>
+  
+  <script>
+    var playerElement = document.getElementById("player-wrapper");
+
+var player = new Clappr.Player({
+  source: 'https://admdn1ta.cdn.mgmlcdn.com/adsports1/smil:adsports1.stream.smil/playlist.m3u8?stime=20210814101000&etime=20210821180320&token=05badc38405f0198d3ac0',
+  poster: 'http://clappr.io/poster.png',
+  mute: true,
+  height: Math.floor(window.innerHeight|| document.documentElement.clientHeight|| 
+document.body.clientHeight),
+  width: '1000'
+});
+
+player.attachTo(playerElement);
+
+window.addEventListener('resize', function(event) {
+    document.querySelectorAll("div[data-player]")[0].style.height = Math.floor(window.innerHeight|| document.documentElement.clientHeight|| 
+document.body.clientHeight)+'px'
+}, true);
+
+  </script>
+<style>
+	div[data-player]{
+		width:100% !important;
+	}
+	body,html{
+		padding: 0;
+		margin: 0;
+	}
+</style>
+</body>
+</html>
